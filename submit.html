@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghibli Animation</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #0099f7; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #e84845,
+          #2c8bc7
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #f11712, #0099f7);
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        position: relative;
+        text-align: center;
+      }
+      .character {
+        border-radius: 20px;
+        width: 300px;
+        animation: wave 0.5s infinite alternate;
+      }
+      @keyframes wave {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(5deg);
+        }
+      }
+      .bubble {
+        position: absolute;
+        top: 10px;
+        right: -50px;
+        background: white;
+        padding: 10px;
+        border-radius: 10px;
+        border: 2px solid black;
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="/potfolioimages/WhatsApp Image 2025-03-29 at 18.02.03_ec50eca5.jpg"
+        alt="Ghibli Character"
+        class="character"
+        id="character"
+      />
+      <div class="bubble" id="bubble">HELLO_My Friend!</div>
+    </div>
+    <script>
+      const character = document.getElementById("character");
+      const bubble = document.getElementById("bubble");
+
+      character.addEventListener("click", () => {
+        bubble.style.opacity = 1;
+        setTimeout(() => {
+          bubble.style.opacity = 0;
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

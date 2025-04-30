@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me!</title>
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      header {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+        text-align: center;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      nav ul li {
+        margin: 10px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .hero {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .hero-image img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 10px;
+        margin: 20px 0;
+      }
+
+      .hero-text {
+        display: inline-block;
+        border: 1px solid black;
+        border-radius: 10px;
+        box-shadow: 3px 3px 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        max-width: 600px;
+        margin: 20px;
+      }
+
+      #p {
+        text-align: justify;
+      }
+
+      .icon {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid black;
+        border-radius: 10px;
+        box-shadow: 3px 3px 10px;
+        margin: 20px auto;
+        max-width: 1000px;
+      }
+
+      .icon img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: rgba(248, 248, 248, 0.8);
+        margin-top: 40px;
+      }
+
+      /* Media Queries for Responsiveness */
+
+      @media (max-width: 768px) {
+        .hero {
+          flex-direction: column;
+        }
+
+        .hero-text {
+          max-width: 90%;
+        }
+
+        .icon {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .icon img {
+          max-width: 200px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        header h1 {
+          font-size: 20px;
+        }
+
+        .hero-text {
+          padding: 15px;
+        }
+
+        .hero-text h1 {
+          font-size: 24px;
+        }
+
+        #p {
+          font-size: 14px;
+        }
+
+        .icon img {
+          max-width: 150px;
+        }
+
+        footer {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Pawan Parmar</h1>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/achievements.html">Achievements</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/certificate.html">Certificates</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1 align="center">About Me!</h1>
+    <section class="hero">
+      <div class="hero-text">
+        <div class="hero-image">
+          <img src="/potfolioimages/a.image.jpg" alt="Illustration of Pawan" />
+        </div>
+        <div id="p">
+          Hi, I'm <strong>Pawan</strong>, a sincere student of artificial
+          intelligence, dedicated to mastering the future. I approach the field
+          with a sincere desire to learn, understand, and master the complex
+          algorithms and concepts that drive AI.<br />
+          My dedication to the learning process is a testament to my potential,
+          and a sign of the impactful contributions I am poised to make.<br />
+          In the intricate world of software development, clarity and mentorship
+          are invaluable.<br />
+          I possess a unique ability to demystify complex concepts, making them
+          accessible to developers at all levels.<br />
+          With a robust foundation in data structures and algorithms, I build
+          frontend development websites that are as functional as they are
+          user-friendly.<br />
+          But my impact extends beyond code; I enjoy exploring photography,
+          experimenting with emerging technologies, and mentoring aspiring
+          developers to achieve their goals.
+        </div>
+      </div>
+    </section>
+    <h1 align="center">Skills</h1>
+    <h1 class="text-2xl font-bold mb-2">Frontend Skills</h1>
+    <div class="icon">
+      <img title="HTML" alt="HTML icon" src="/potfolioimages/html icon.jpeg" />
+      <img title="CSS" alt="CSS icon" src="/potfolioimages/css icon.jpeg" />
+      <img
+        title="Javascript"
+        alt="Javascript icon"
+        src="/potfolioimages/js icon.jpeg"
+      />
+    </div>
+    <h1 class="text-2xl font-bold mb-2">Programming Language</h1>
+    <div class="icon">
+      <img title="C" alt="C icon" src="/potfolioimages/c icon.jpeg" />
+      <img title="C++" alt="C++ icon" src="/potfolioimages/cpp icon.jpeg" />
+      <img
+        title="Python"
+        alt="Python icon"
+        src="/potfolioimages/python icon.jpeg"
+      />
+    </div>
+    <footer>
+      <p>© 2025 Pawan Parmar | All Rights Reserved</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .portfolio__img {
+            width: 50%;
+            height: 50%;
+            margin-left: 25%;
+            border-radius: 20px;
+            transition: .3s ease;
+        }
+        .portfolio__img:hover {
+            transform: scale(1.05);
+        }
+        .frame
+        {
+            display: block;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            
+            
+        }
+    </style>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>Pawan Parmar</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/achievements.html">Achievements</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/certificate.html">Certificates</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="portfolio section" id="portfolio">
+
+        <h2 class="section__title">Portfolio</h2>
+        <span class="section__subtitle">Most recent works</span>
+
+        <div class="portfolio__container container swiper-container">
+            <div class="frame">
+                <!--==================== PORTFOLIO 1 ====================-->
+
+                <div class="portfolio__content grid swiper-slide">
+                    <img src="/potfolioimages/Screenshot_29-3-2025_1129_.jpeg" alt="" class="portfolio__img">
+
+                    <div class="portfolio_">
+                        <h3 class="portfolio__title">Html5_The Language</h3>
+                        <p class="portfolio__description">This course helps you to kick start your journey with web development. The course provides a brief introduction to the web.</p>
+                    </div>
+                </div>
+
+                <!--==================== PORTFOLIO 2 ====================-->
+
+                <div class="portfolio__content grid swiper-slide">
+                    <img src="/potfolioimages/Screenshot_29-3-2025_11137_.jpeg" alt="" class="portfolio__img">
+
+                    <div class="portfolio_">
+                        <h3 class="portfolio__title">JavaScript</h3>
+                        <p class="portfolio__description">JavaScript is the programming language for the web. It makes an HTML page dynamic. JavaScript has many built-in functions, objects.</p>
+                    </div>
+                </div>
+
+                <!--==================== PORTFOLIO 3 ====================-->
+
+                <div class="portfolio__content grid swiper-slide">
+                    <img src="/potfolioimages/Screenshot_29-3-2025_11051_.jpeg" alt="" class="portfolio__img">
+
+                    <div class="portfolio_">
+                        <h3 class="portfolio__title">css</h3>
+                        <p class="portfolio__description">CSS3 is the latest version of Cascading Style Sheets. CSS3 helps the learner in understanding the new selectors introduced in CSS3, new color models of CSS3.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- add arrows-->
+            <div class="swiper-button-next">
+                <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+            </div>
+
+            <div class="swiper-button-prev">
+                <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+            </div>
+
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+
+
+        </div>
+        
+    </section>
+    <footer>
+        <p>© 2025 Pawan Parmar | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

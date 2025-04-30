@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawan Parmar | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/99163a66f1.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent scrollbars due to canvas */
+        }
+
+        #background-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place behind other content */
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="background-canvas"></canvas>
+
+    <header>
+        <h1>Pawan Parmar</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/achievements.html">Achievements</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/certificate.html">Certificates</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Hey, I'm Pawan</h2>
+            <p>Every night we go to sleep without a guarantee to living tomorrow but we still set an alarm to wake up 💫 and that's the hope😇😊.</p>
+            <div class="buttons">
+                <a href="https://github.com/" class="btn">Connect</a>
+                <a href="https://www.linkedin.com/feed/" class="btn contact">Linkedin</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="/potfolioimages/profile_image.jpg" alt="Illustration of Pawan">
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Pawan Parmar | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        const canvas = document.getElementById('background-canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particlesArray = [];
+        const numberOfParticles = (canvas.height * canvas.width) / 9000;
+
+        let hue = 0;
+
+        window.addEventListener('resize', function() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        const mouse = {
+            x: undefined,
+            y: undefined,
+        };
+
+        canvas.addEventListener('click', function(event) {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+
+        canvas.addEventListener('mousemove', function(event) {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 3 - 1.5;
+                this.speedY = Math.random() * 3 - 1.5;
+                this.color = 'hsl(' + hue + ', 100%, 50%)';
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.size > 0.1) this.size -= 0.03;
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            for (let i = 0; i < numberOfParticles; i++) {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                particlesArray.push(new Particle(x, y));
+            }
+        }
+        init();
+
+        function handleParticles() {
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+                if (particlesArray[i].size <= 0.2) {
+                    particlesArray.splice(i, 1);
+                    i--;
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            handleParticles();
+            hue += 2;
+            if (particlesArray.length < numberOfParticles) {
+                particlesArray.push(new Particle(mouse.x, mouse.y));
+            }
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+</body>
+</html>
